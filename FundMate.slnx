@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FundMate.Data/FundMate.Data.csproj" />
+  <Project Path="FundMate.Web/FundMate.Web.csproj" />
+</Solution>

@@ -1,0 +1,14 @@
+D:\FundMate\FundMate.Data\bin\Debug\net10.0\FundMate.Data.deps.json
+D:\FundMate\FundMate.Data\bin\Debug\net10.0\FundMate.Data.runtimeconfig.json
+D:\FundMate\FundMate.Data\bin\Debug\net10.0\FundMate.Data.dll
+D:\FundMate\FundMate.Data\bin\Debug\net10.0\FundMate.Data.pdb
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.csproj.AssemblyReference.cache
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.AssemblyInfoInputs.cache
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.AssemblyInfo.cs
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.csproj.CoreCompileInputs.cache
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.dll
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\refint\FundMate.Data.dll
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.pdb
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\FundMate.Data.genruntimeconfig.cache
+D:\FundMate\FundMate.Data\obj\Debug\net10.0\ref\FundMate.Data.dll

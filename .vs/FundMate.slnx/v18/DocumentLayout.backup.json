@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\FundMate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44B650DB-175E-4B76-B6FF-09EB4D5BC443}|FundMate.Data\\FundMate.Data.csproj|d:\\fundmate\\fundmate.data\\migrations\\20260811031059_addedgrouptransactionstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B650DB-175E-4B76-B6FF-09EB4D5BC443}|FundMate.Data\\FundMate.Data.csproj|solutionrelative:fundmate.data\\migrations\\20260811031059_addedgrouptransactionstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\FundMate\\FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44B650DB-175E-4B76-B6FF-09EB4D5BC443}|FundMate.Data\\FundMate.Data.csproj|d:\\fundmate\\fundmate.data\\migrations\\appdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44B650DB-175E-4B76-B6FF-09EB4D5BC443}|FundMate.Data\\FundMate.Data.csproj|solutionrelative:fundmate.data\\migrations\\appdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\FundMate\\FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260811031059_AddedGroupTransactionsTable.cs",
+              "DocumentMoniker": "D:\\FundMate\\FundMate.Data\\Migrations\\20260811031059_AddedGroupTransactionsTable.cs",
+              "RelativeDocumentMoniker": "FundMate.Data\\Migrations\\20260811031059_AddedGroupTransactionsTable.cs",
+              "ToolTip": "D:\\FundMate\\FundMate.Data\\Migrations\\20260811031059_AddedGroupTransactionsTable.cs",
+              "RelativeToolTip": "FundMate.Data\\Migrations\\20260811031059_AddedGroupTransactionsTable.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-11T03:10:59.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20260810090337_AddedGroupUsersTable.cs",
+              "DocumentMoniker": "D:\\FundMate\\FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs",
+              "RelativeDocumentMoniker": "FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs",
+              "ToolTip": "D:\\FundMate\\FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs",
+              "RelativeToolTip": "FundMate.Data\\Migrations\\20260810090337_AddedGroupUsersTable.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T09:03:37.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDataContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\FundMate\\FundMate.Data\\Migrations\\AppDataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "FundMate.Data\\Migrations\\AppDataContextModelSnapshot.cs",
+              "ToolTip": "D:\\FundMate\\FundMate.Data\\Migrations\\AppDataContextModelSnapshot.cs",
+              "RelativeToolTip": "FundMate.Data\\Migrations\\AppDataContextModelSnapshot.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAswBQBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T09:01:13.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260810090050_AddedGroupUsersTable.cs",
+              "DocumentMoniker": "D:\\FundMate\\FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs",
+              "RelativeDocumentMoniker": "FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs",
+              "ToolTip": "D:\\FundMate\\FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs",
+              "RelativeToolTip": "FundMate.Data\\Migrations\\20260810090050_AddedGroupUsersTable.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-10T09:00:50.466Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
