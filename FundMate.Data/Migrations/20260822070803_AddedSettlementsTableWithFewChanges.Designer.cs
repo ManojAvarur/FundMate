@@ -3,6 +3,7 @@ using System;
 using FundMate.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,13 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FundMate.Data.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20260822070803_AddedSettlementsTableWithFewChanges")]
+    partial class AddedSettlementsTableWithFewChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.11")
+                .HasAnnotation("ProductVersion", "10.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -345,19 +348,9 @@ namespace FundMate.Data.Migrations
                     b.Property<bool>("IsSuperAdmin")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<string>("OtpCode")
-                        .HasMaxLength(6)
-                        .HasColumnType("character varying(6)");
-
-                    b.Property<DateTime?>("OtpCreatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Password")
                         .IsRequired()

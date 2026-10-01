@@ -19,7 +19,8 @@ public class GroupUsers : _AuditableFields
     [ForeignKey(nameof(Groups))]
     public int GroupId { get; set; }
 
-    public Users Users { get; set; } = null!;
+    // Navigation properties
+    public virtual Users Users { get; set; } = null!;
 
-    public Groups Groups { get; set; } = null!;
+    public virtual Groups Groups { get; set; } = null!;
 }

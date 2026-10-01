@@ -1,4 +1,4 @@
-﻿using FundMate.Data.Models.Abstraction;
+using FundMate.Data.Models.Abstraction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +21,8 @@ public class Relations : _AuditableFields
     [ForeignKey(nameof(UserTwo))]
     public Guid UserIdTwo { get; set; }
 
-    public Users UserOne { get; set; } = null!;
+    // Navigation properties
+    public virtual Users UserOne { get; set; } = null!;
 
-    public Users UserTwo { get; set; } = null!;
+    public virtual Users UserTwo { get; set; } = null!;
 }

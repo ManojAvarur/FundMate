@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace FundMate.Data.Models;
@@ -25,4 +26,28 @@ public class Users
 
     [Required]
     public bool IsSuperAdmin { get; set; } = false;
+
+    [Required]
+    public bool IsVerified { get; set; } = false;
+
+    [MaxLength(6)]
+    public string? OtpCode { get; set; }
+
+    public DateTime? OtpCreatedAt { get; set; }
+
+    public virtual bool IsOtpExpired(int otpExpirationMinutes)
+    {
+        if (string.IsNullOrWhiteSpace(OtpCode) || OtpCreatedAt is null)
+        {
+            return true;
+        }
+
+        return OtpCreatedAt.Value.AddMinutes(otpExpirationMinutes) <= DateTime.Now;
+    }
+
+    public virtual void GenerateNewOtp()
+    {
+        OtpCode = RandomNumberGenerator.GetHexString(6);
+        OtpCreatedAt = DateTime.Now;
+    }
 }

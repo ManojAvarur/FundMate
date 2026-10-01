@@ -12,8 +12,12 @@ public class GroupTransactions: _AuditableFields
     public int Id { get; set; }
 
     [Required]
-    [ForeignKey(nameof(Users))]
-    public Guid PaidById { get; set; }
+    [ForeignKey(nameof(GroupUsers))]
+    public int PaidById { get; set; }
+
+    [Required]
+    [ForeignKey(nameof(SplitType))]
+    public int SplitTypeId { get; set; }
 
     [Required]
     [MaxLength(150)]
@@ -26,11 +30,8 @@ public class GroupTransactions: _AuditableFields
     [Column(TypeName = "decimal(10, 2)")]
     public decimal Amount { get; set; }
 
-    [Required]
-    [ForeignKey(nameof(RecipientGroup))]
-    public int RecipientGroupId { get; set; }
+    // Navigation properties
+    public virtual GroupUsers GroupUsers { get; set; } = null!;
 
-    public Users Users { get; set; } = null!;
-
-    public Groups RecipientGroup { get; set; } = null!;
+    public virtual SplitType SplitType { get; set; } = null!;
 }

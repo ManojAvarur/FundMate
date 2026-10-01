@@ -3,6 +3,7 @@ using System;
 using FundMate.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,13 +12,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FundMate.Data.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20260817051800_FixedAduitableFieldsTypo")]
+    partial class FixedAduitableFieldsTypo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.11")
+                .HasAnnotation("ProductVersion", "10.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -43,15 +46,15 @@ namespace FundMate.Data.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
-                    b.Property<int>("PaidById")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("PaidById")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("PaymentDescription")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
-                    b.Property<int>("SplitTypeId")
+                    b.Property<int>("RecipientGroupId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -66,7 +69,7 @@ namespace FundMate.Data.Migrations
 
                     b.HasIndex("PaidById");
 
-                    b.HasIndex("SplitTypeId");
+                    b.HasIndex("RecipientGroupId");
 
                     b.HasIndex("UpdatedById");
 
@@ -189,145 +192,6 @@ namespace FundMate.Data.Migrations
                     b.ToTable("Relations");
                 });
 
-            modelBuilder.Entity("FundMate.Data.Models.Settlements", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(10, 2)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("CreatedById")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("GroupId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Note")
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
-
-                    b.Property<int>("PayeeId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PayerId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("UpdatedById")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("GroupId");
-
-                    b.HasIndex("PayeeId");
-
-                    b.HasIndex("PayerId");
-
-                    b.HasIndex("UpdatedById");
-
-                    b.ToTable("Settlements", t =>
-                        {
-                            t.HasCheckConstraint("CK_Settlements_PayerPayeeDiffer", "\"PayerId\" <> \"PayeeId\"");
-                        });
-                });
-
-            modelBuilder.Entity("FundMate.Data.Models.SplitType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("CreatedById")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("UpdatedById")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
-
-                    b.HasIndex("UpdatedById");
-
-                    b.ToTable("SplitTypes");
-                });
-
-            modelBuilder.Entity("FundMate.Data.Models.TransactionSubscribers", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("CreatedById")
-                        .HasColumnType("uuid");
-
-                    b.Property<int>("GroupTransactionId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GroupUserId")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("IsPaid")
-                        .HasColumnType("boolean");
-
-                    b.Property<decimal>("OwedAmount")
-                        .HasColumnType("decimal(10, 2)");
-
-                    b.Property<decimal>("SplitValue")
-                        .HasColumnType("decimal(10, 2)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("UpdatedById")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatedById");
-
-                    b.HasIndex("GroupTransactionId");
-
-                    b.HasIndex("GroupUserId");
-
-                    b.HasIndex("UpdatedById");
-
-                    b.ToTable("TransactionSubscribers");
-                });
-
             modelBuilder.Entity("FundMate.Data.Models.Users", b =>
                 {
                     b.Property<Guid>("Id")
@@ -345,19 +209,9 @@ namespace FundMate.Data.Migrations
                     b.Property<bool>("IsSuperAdmin")
                         .HasColumnType("boolean");
 
-                    b.Property<bool>("IsVerified")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<string>("OtpCode")
-                        .HasMaxLength(6)
-                        .HasColumnType("character varying(6)");
-
-                    b.Property<DateTime?>("OtpCreatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -373,34 +227,34 @@ namespace FundMate.Data.Migrations
                     b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FundMate.Data.Models.GroupUsers", "GroupUsers")
+                    b.HasOne("FundMate.Data.Models.Users", "Users")
                         .WithMany()
                         .HasForeignKey("PaidById")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FundMate.Data.Models.SplitType", "SplitType")
+                    b.HasOne("FundMate.Data.Models.Groups", "RecipientGroup")
                         .WithMany()
-                        .HasForeignKey("SplitTypeId")
+                        .HasForeignKey("RecipientGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("CreatedBy");
 
-                    b.Navigation("GroupUsers");
-
-                    b.Navigation("SplitType");
+                    b.Navigation("RecipientGroup");
 
                     b.Navigation("UpdatedBy");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("FundMate.Data.Models.GroupUsers", b =>
@@ -408,7 +262,7 @@ namespace FundMate.Data.Migrations
                     b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Groups", "Groups")
@@ -420,7 +274,7 @@ namespace FundMate.Data.Migrations
                     b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Users", "Users")
@@ -443,13 +297,13 @@ namespace FundMate.Data.Migrations
                     b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("CreatedBy");
@@ -462,13 +316,13 @@ namespace FundMate.Data.Migrations
                     b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
                         .WithMany()
                         .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
                         .WithMany()
                         .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FundMate.Data.Models.Users", "UserOne")
@@ -490,103 +344,6 @@ namespace FundMate.Data.Migrations
                     b.Navigation("UserOne");
 
                     b.Navigation("UserTwo");
-                });
-
-            modelBuilder.Entity("FundMate.Data.Models.Settlements", b =>
-                {
-                    b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.Groups", "Group")
-                        .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.GroupUsers", "Payee")
-                        .WithMany()
-                        .HasForeignKey("PayeeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.GroupUsers", "Payer")
-                        .WithMany()
-                        .HasForeignKey("PayerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
-                        .WithMany()
-                        .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("Group");
-
-                    b.Navigation("Payee");
-
-                    b.Navigation("Payer");
-
-                    b.Navigation("UpdatedBy");
-                });
-
-            modelBuilder.Entity("FundMate.Data.Models.SplitType", b =>
-                {
-                    b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
-                        .WithMany()
-                        .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("UpdatedBy");
-                });
-
-            modelBuilder.Entity("FundMate.Data.Models.TransactionSubscribers", b =>
-                {
-                    b.HasOne("FundMate.Data.Models.Users", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.GroupTransactions", "GroupTransaction")
-                        .WithMany()
-                        .HasForeignKey("GroupTransactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.GroupUsers", "GroupUser")
-                        .WithMany()
-                        .HasForeignKey("GroupUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FundMate.Data.Models.Users", "UpdatedBy")
-                        .WithMany()
-                        .HasForeignKey("UpdatedById")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("CreatedBy");
-
-                    b.Navigation("GroupTransaction");
-
-                    b.Navigation("GroupUser");
-
-                    b.Navigation("UpdatedBy");
                 });
 #pragma warning restore 612, 618
         }

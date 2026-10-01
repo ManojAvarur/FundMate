@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +10,7 @@ public class _AuditableFields
 {
     [Required]
     [ForeignKey(nameof(CreatedBy))]
-    public Guid CreadtedById { get; set; }
+    public Guid CreatedById { get; set; }
 
     [Required]
     [ForeignKey(nameof(UpdatedBy))]
@@ -22,7 +22,8 @@ public class _AuditableFields
     [Required]
     public DateTime UpdatedAt { get; set; }
 
-    public Users CreatedBy { get; set; } = null!;
+    // Navigation properties
+    public virtual Users CreatedBy { get; set; } = null!;
 
-    public Users UpdatedBy { get; set; } = null!;
+    public virtual Users UpdatedBy { get; set; } = null!;
 }
