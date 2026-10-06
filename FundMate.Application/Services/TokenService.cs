@@ -48,14 +48,4 @@ public class TokenService: ITokenService
 
         return GenerateJwtToken(claims, DateTime.UtcNow.AddMinutes(30));
     }
-
-    public string GenerateUserSignupToken(Users user)
-    {
-        var claims = new Claim[]
-        {
-            new(ClaimTypes.Email, user.Email)
-        };
-
-        return GenerateJwtToken(claims, DateTime.UtcNow.AddMinutes(1));
-    }
 }

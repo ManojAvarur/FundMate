@@ -4,9 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace FundMate.Data.Models;
 
+[Index(nameof(Email), IsUnique = true)]
 public class Users
 {
     [Key]
@@ -42,12 +44,18 @@ public class Users
             return true;
         }
 
-        return OtpCreatedAt.Value.AddMinutes(otpExpirationMinutes) <= DateTime.Now;
+        return OtpCreatedAt.Value.AddMinutes(otpExpirationMinutes) <= DateTime.UtcNow;
     }
 
     public virtual void GenerateNewOtp()
     {
         OtpCode = RandomNumberGenerator.GetHexString(6);
-        OtpCreatedAt = DateTime.Now;
+        OtpCreatedAt = DateTime.UtcNow;
+    }
+
+    public void ClearOTP()
+    {
+        OtpCode = null;
+        OtpCreatedAt = null;
     }
 }

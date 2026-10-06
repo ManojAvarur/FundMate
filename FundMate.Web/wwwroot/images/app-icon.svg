@@ -1,0 +1,117 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="448" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="0.48" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+
+    <linearGradient id="fGradient" x1="120" y1="100" x2="300" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DBEAFE"/>
+    </linearGradient>
+
+    <linearGradient id="mGradient" x1="225" y1="220" x2="390" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#86EFAC"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+
+    <linearGradient id="coinGradient" x1="80" y1="80" x2="155" y2="155" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF08A"/>
+      <stop offset="0.5" stop-color="#FACC15"/>
+      <stop offset="1" stop-color="#EAB308"/>
+    </linearGradient>
+
+    <filter id="shadow" x="60" y="60" width="400" height="400" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+
+  <circle cx="408" cy="104" r="92" fill="white" opacity="0.14"/>
+  <circle cx="92" cy="418" r="112" fill="#0F172A" opacity="0.10"/>
+  <circle cx="256" cy="256" r="145" fill="white" opacity="0.08"/>
+
+  <circle cx="112" cy="122" r="38" fill="url(#coinGradient)"/>
+  <text x="112" y="137"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="38"
+        font-weight="900"
+        fill="#0F172A">$</text>
+
+  <circle cx="405" cy="139" r="18" fill="#FACC15"/>
+  <circle cx="416" cy="353" r="18" fill="#22C55E"/>
+  <path d="M405 139C366 191 368 295 416 353"
+        stroke="white"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-dasharray="12 14"
+        opacity="0.55"/>
+
+  <g filter="url(#shadow)">
+    <path
+      d="M157 112
+         C138 112 124 126 124 145
+         V318
+         C124 337 138 351 157 351
+         C176 351 190 337 190 318
+         V270
+         H263
+         C281 270 295 256 295 238
+         C295 220 281 207 263 207
+         H190
+         V178
+         H295
+         C314 178 328 164 328 145
+         C328 126 314 112 295 112
+         H157Z"
+      fill="url(#fGradient)"/>
+
+    <path
+      d="M218 280
+         C218 259 233 243 254 243
+         C269 243 280 251 287 264
+         L315 318
+         L343 264
+         C350 251 361 243 376 243
+         C397 243 412 259 412 280
+         V381
+         C412 400 399 414 381 414
+         C363 414 350 400 350 381
+         V337
+         L339 359
+         C334 370 326 376 315 376
+         C304 376 296 370 291 359
+         L280 337
+         V381
+         C280 400 267 414 249 414
+         C231 414 218 400 218 381
+         V280Z"
+      fill="url(#mGradient)"/>
+
+    <path d="M164 142C202 124 251 127 290 143"
+          stroke="white"
+          stroke-width="10"
+          stroke-linecap="round"
+          opacity="0.55"/>
+
+    <path d="M250 269C267 260 281 268 291 286"
+          stroke="white"
+          stroke-width="8"
+          stroke-linecap="round"
+          opacity="0.38"/>
+
+    <path d="M248 279C274 267 296 273 315 294"
+          stroke="#FACC15"
+          stroke-width="9"
+          stroke-linecap="round"/>
+  </g>
+
+  <path d="M371 91V119" stroke="#FACC15" stroke-width="8" stroke-linecap="round"/>
+  <path d="M357 105H385" stroke="#FACC15" stroke-width="8" stroke-linecap="round"/>
+
+  <circle cx="91" cy="353" r="7" fill="#FACC15"/>
+  <circle cx="372" cy="415" r="7" fill="white" opacity="0.8"/>
+</svg>

@@ -8,6 +8,4 @@ namespace FundMate.Application.Interfaces;
 public interface ITokenService
 {
     string GenerateUserLoggedInToken(Users user);
-
-    string GenerateUserSignupToken(Users user)  ;
 }

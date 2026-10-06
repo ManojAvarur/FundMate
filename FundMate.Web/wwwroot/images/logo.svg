@@ -1,0 +1,200 @@
+<svg width="700" height="420" viewBox="0 0 700 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="55" y1="35" x2="655" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="0.55" stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#DCFCE7"/>
+    </linearGradient>
+
+    <linearGradient id="fGradient" x1="190" y1="78" x2="395" y2="305" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="0.35" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1E40AF"/>
+    </linearGradient>
+
+    <linearGradient id="mGradient" x1="330" y1="205" x2="535" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#86EFAC"/>
+      <stop offset="0.45" stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+
+    <linearGradient id="goldGradient" x1="100" y1="75" x2="180" y2="155" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF08A"/>
+      <stop offset="0.45" stop-color="#FACC15"/>
+      <stop offset="1" stop-color="#EAB308"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="65" y="35" width="600" height="365" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.18"/>
+    </filter>
+
+    <filter id="glow" x="150" y="60" width="430" height="330" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.2
+                0 0 0 0 0.7
+                0 0 0 0 1
+                0 0 0 0.35 0"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" rx="58" fill="url(#bg)"/>
+
+  <!-- Soft decorative blobs -->
+  <circle cx="620" cy="75" r="70" fill="#22C55E" opacity="0.10"/>
+  <circle cx="95" cy="350" r="95" fill="#2563EB" opacity="0.08"/>
+  <circle cx="350" cy="210" r="155" fill="white" opacity="0.25"/>
+
+  <!-- Floating money icons -->
+  <g opacity="0.98">
+    <circle cx="135" cy="112" r="36" fill="url(#goldGradient)"/>
+    <text x="135" y="126" text-anchor="middle"
+          font-family="Arial, sans-serif"
+          font-size="35"
+          font-weight="900"
+          fill="#0F172A">$</text>
+
+    <circle cx="625" cy="112" r="31" fill="#22C55E"/>
+    <text x="625" y="124" text-anchor="middle"
+          font-family="Arial, sans-serif"
+          font-size="29"
+          font-weight="900"
+          fill="white">₹</text>
+
+    <g transform="rotate(-15 185 312)">
+      <rect x="136" y="284" width="98" height="56" rx="15" fill="#16A34A"/>
+      <circle cx="185" cy="312" r="16" fill="#DCFCE7"/>
+      <path d="M153 302H168" stroke="#DCFCE7" stroke-width="6" stroke-linecap="round"/>
+      <path d="M202 322H218" stroke="#DCFCE7" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <g transform="rotate(14 612 310)">
+      <rect x="563" y="282" width="98" height="56" rx="15" fill="#2563EB"/>
+      <circle cx="612" cy="310" r="16" fill="#DBEAFE"/>
+      <path d="M579 300H595" stroke="#DBEAFE" stroke-width="6" stroke-linecap="round"/>
+      <path d="M629 321H645" stroke="#DBEAFE" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Split/friend trail -->
+  <path d="M208 222C280 160 371 164 443 225C505 278 558 276 620 224"
+        stroke="#94A3B8"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-dasharray="12 18"
+        opacity="0.65"/>
+
+  <circle cx="208" cy="222" r="15" fill="#14B8A6"/>
+  <circle cx="443" cy="225" r="15" fill="#FACC15"/>
+  <circle cx="620" cy="224" r="15" fill="#14B8A6"/>
+
+  <!-- Fancy FM mark -->
+  <g filter="url(#softShadow)">
+    <!-- Blue backing glow stroke behind F -->
+    <path
+      d="M234 101
+         C216 101 202 115 202 133
+         V283
+         C202 302 216 316 235 316
+         C253 316 267 302 267 283
+         V242
+         H338
+         C356 242 369 229 369 212
+         C369 195 356 182 338 182
+         H267
+         V162
+         H374
+         C392 162 406 148 406 131
+         C406 114 392 101 374 101
+         H234Z"
+      fill="#0F172A"
+      opacity="0.10"/>
+
+    <!-- Funky F -->
+    <path
+      d="M235 96
+         C216 96 201 111 201 130
+         V284
+         C201 303 216 318 235 318
+         C254 318 269 303 269 284
+         V244
+         H342
+         C360 244 374 230 374 212
+         C374 194 360 180 342 180
+         H269
+         V160
+         H378
+         C397 160 411 146 411 128
+         C411 110 397 96 378 96
+         H235Z"
+      fill="url(#fGradient)"/>
+
+    <!-- F inner shine -->
+    <path d="M244 121C278 106 335 108 375 124"
+          stroke="white"
+          stroke-width="10"
+          stroke-linecap="round"
+          opacity="0.62"/>
+
+    <path d="M246 206H337"
+          stroke="white"
+          stroke-width="8"
+          stroke-linecap="round"
+          opacity="0.28"/>
+
+    <!-- Fancy green M -->
+    <path
+      d="M328 248
+         C328 227 343 211 364 211
+         C379 211 390 219 397 232
+         L424 284
+         L451 232
+         C458 219 469 211 484 211
+         C505 211 520 227 520 248
+         V338
+         C520 357 507 371 489 371
+         C471 371 458 357 458 338
+         V302
+         L448 322
+         C443 334 434 340 424 340
+         C414 340 405 334 400 322
+         L390 302
+         V338
+         C390 357 377 371 359 371
+         C341 371 328 357 328 338
+         V248Z"
+      fill="url(#mGradient)"/>
+
+    <!-- M premium highlights -->
+    <path d="M358 237C376 228 389 237 399 255"
+          stroke="white"
+          stroke-width="8"
+          stroke-linecap="round"
+          opacity="0.45"/>
+
+    <path d="M466 237C486 227 501 239 502 259"
+          stroke="white"
+          stroke-width="7"
+          stroke-linecap="round"
+          opacity="0.34"/>
+
+    <!-- Gold bridge accent between F and M -->
+    <path d="M330 252C356 241 377 246 397 267"
+          stroke="#FACC15"
+          stroke-width="9"
+          stroke-linecap="round"
+          opacity="0.95"/>
+  </g>
+
+  <!-- Sparkles -->
+  <path d="M610 136V166" stroke="#FACC15" stroke-width="8" stroke-linecap="round"/>
+  <path d="M595 151H625" stroke="#FACC15" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M503 78V100" stroke="#22C55E" stroke-width="7" stroke-linecap="round"/>
+  <path d="M492 89H514" stroke="#22C55E" stroke-width="7" stroke-linecap="round"/>
+
+  <circle cx="548" cy="150" r="6" fill="#FACC15"/>
+  <circle cx="276" cy="72" r="6" fill="#22C55E"/>
+</svg>
